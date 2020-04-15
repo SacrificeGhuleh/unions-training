@@ -14,3 +14,4 @@ set(COMMON_SOURCES
 
 add_executable(example01 ${SRC_DIR}/example01.cpp ${COMMON_SOURCES})
 add_executable(example02 ${SRC_DIR}/example02.cpp ${COMMON_SOURCES})
+add_executable(example03 ${SRC_DIR}/example03.cpp ${COMMON_SOURCES})

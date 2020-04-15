@@ -123,6 +123,9 @@ int main(int argc, char **argv) {
   
   std::cout << "Why is the first output incorrect? \n\n\n";
   
+  std::cout << "nu1.dbl  addr :" << &nu1.dbl << "\n";
+  std::cout << "nu1.itgr addr :" << &nu1.itgr << "\n\n\n";
+  
   
   TaggedUnion tu1{TaggedUnion::DataType::INTEGER, 10};
   TaggedUnion tu2{.dataType{TaggedUnion::DataType::DOUBLE}, .dbl{20.}};
