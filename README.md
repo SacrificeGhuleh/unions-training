@@ -37,3 +37,16 @@ What is wrong here?
 
 Unions shouldn't be used 'naked'. In this use case, it is useful and safer to have some indicator of currently used member. 
 
+### 2.2 Type punning
+#### 2.2.1 What is type punning?
+ Type punning is the possibility of a programming language to intentionally subvert the type system to treat a type as a different type. One typical way to do type punning in C++ is to read the member of a union with a different type from the one with which it was written.
+#### 2.2.2 How to safely convert data from one datatype to another? 
+ Still not the best solution, but better is to use `reinterpret_cast`. Generally, from my experience, data punning is most useful for converting values into raw bytes and vice versa. Even better solution is to use bit shifting and masking to get raw bytes. 
+#### 2.2.3 But wait, there's more!
+ The best and safest way to access raw bytes is to use distinct data type `std::byte`
+##### 2.2.3.1 What is advantage here?
+ std::byte is really just a bunch of un-interpreted bits. If you use uint8_t or unsigned char, you are actually interpreting the bits as an 8-bit numerical value, which might not be the right semantics that you want. Also, std::byte will not allow accidental arithmetic on it, while uint8_t does.  
+ 
+
+
+
