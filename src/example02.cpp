@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <array>
-#include "utils.h"
+#include <utils.h>
 
 template<class T_DATATYPE, size_t T_NUM>
 struct baseVec {
